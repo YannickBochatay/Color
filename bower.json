@@ -1,0 +1,17 @@
+{
+    "name": "JSYG.Color",
+    "version": "0.1",
+    "authors" : ["Yannick Bochatay"],
+    "description" : "Manipulation of colors in JSYG framework. You can use it standalone.",
+  	"main": "Color.js",
+    "license": "MIT",
+  	"ignore": ["**/.*"],
+	"keywords": [
+		"svg",
+		"javascript",
+		"library",
+		"framework",
+		"jsyg",
+		"color"
+	]
+}
