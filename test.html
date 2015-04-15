@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>JSYG.Date</title>
+	</head>
+	<body>
+		<div id="result"></div>
+		<script src="Color.js"></script>
+		<script>
+		
+			var color1 = new JSYG.Color("pink"),
+				color2 = color1.complementary(),
+				color,
+				div = document.getElementById("result");
+			
+			function changeCouleur() {
+				
+				color = (color == color1) ? color2 : color1;
+				
+				div.style.backgroundColor = color;
+			}
+			
+			div.textContent = "La couleur complémentaire de " +  color1 + " est " + color2;
+			
+			window.setInterval(changeCouleur,2000);
+			
+			changeCouleur();
+			
+			
+		</script>
+	</body>
+</html>

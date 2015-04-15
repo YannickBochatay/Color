@@ -1,7 +1,7 @@
 ;(function(){
 	
 	"use strict";
-		
+	
 	/**
 	 * Constructeur de couleurs JSYG
 	 * @param arg types possibles
@@ -54,7 +54,7 @@
 			}
 			else throw new Error(arg+" : argument incorrect");
 		}
-	};
+	}
 	
 	//plus de méthodes disponibles sur https://github.com/harthur/color/blob/master/color.js
 	
@@ -170,9 +170,9 @@
 		 */
 		random : function() {
 			
-			this.r = JSYG.rand(0,255);
-			this.g = JSYG.rand(0,255);
-			this.b = JSYG.rand(0,255);
+			this.r = rand(0,255);
+			this.g = rand(0,255);
+			this.b = rand(0,255);
 			
 			return this;
 		},
@@ -310,7 +310,7 @@
 		lighten : function(val) {
 			
 			var hsl = this.toHSL();
-			hsl.l = JSYG.clip( hsl.l + parseInt(val,10),0,100);
+			hsl.l = clip( hsl.l + parseInt(val,10),0,100);
 			return new Color(hsl);
 		},
 		
@@ -369,6 +369,10 @@
 		}
 	};
 	
+	function rand(min,max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+	
+	function clip(nb,min,max) { return nb < min ? min : (nb > max ? max : nb); }
+	
 	/**
 	 * Liste des couleurs html prédéfinies
 	 */
@@ -378,8 +382,17 @@
 	 * Affiche la liste des couleurs html prédéfinies
 	 */
 	Color.showHTMLColors = function() {
+		
+		if (typeof document === "undefined") throw new Error("Cette méthode n'est valable que dans le contexte d'un navigateur");
+		
+		var div;
+		
 		for (var n in Color.htmlCodes) {
-			new JSYG('<div>').fill(n).text(n).appendTo(document.body);
+			
+			div = document.createElement('div');
+			div.style.backgroundColor = n;
+			div.textContent = n;
+			document.body.appendChild(div);
 		}
 	};
 	
@@ -603,8 +616,11 @@
 		return new Color().random().toString();
 	};
 	
-	if (typeof module !== "undefined") module.exports = Color;
-	else if (typeof define === 'function' && define.amd) define([], function() { return Color; });
-	else this.Color = Color;
+	if (!this.JSYG) this.JSYG = {};
+	
+	JSYG.Color = Color;
+	
+	if (typeof module != "undefined") module.exports = Color;
+	else if (typeof define == 'function' && define.amd) define([], function() { return Color; });
 	
 }).call(this);
