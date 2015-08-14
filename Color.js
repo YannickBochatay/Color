@@ -1,9 +1,9 @@
-;(function(){
+;(function(root){
 	
 	"use strict";
 	
 	/**
-	 * Constructeur de couleurs JSYG
+	 * Constructeur de couleurs
 	 * @param arg types possibles
 	 * <ul>
 	 * 	<li> chaîne
@@ -616,11 +616,10 @@
 		return new Color().random().toString();
 	};
 	
-	if (!this.JSYG) this.JSYG = {};
-	
-	JSYG.Color = Color;
-	
-	if (typeof module != "undefined") module.exports = Color;
-	else if (typeof define == 'function' && define.amd) define([], function() { return Color; });
+	if (typeof JSYG != "undefined") JSYG.Color = Color;
+		
+	if (typeof module === "object" && typeof module.exports === "object") module.exports = Color;
+	else if (typeof define == 'function' && define.amd) define(function() { return Color; });
+	else root.Color = Color;
 	
 }).call(this);
