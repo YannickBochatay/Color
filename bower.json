@@ -1,17 +1,28 @@
 {
-    "name": "JSYG.Color",
-    "version": "0.1",
+    "name": "jsyg-color",
     "authors" : ["Yannick Bochatay"],
-    "description" : "Manipulation of colors in JSYG framework. You can use it standalone.",
-  	"main": "Color.js",
+    "description" : "Colors constructor for JSYG framework or standalone",
+    "main": "JSYG.Color.js",
+    "moduleType": [
+        "amd",
+        "globals"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+        "qunit": "latest",
+        "requirejs": "latest",
+        "jsyg":"latest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/YannickBochatay/JSYG.Color.git"
+    },
     "license": "MIT",
-  	"ignore": ["**/.*"],
-	"keywords": [
-		"svg",
-		"javascript",
-		"library",
-		"framework",
-		"jsyg",
-		"color"
-	]
+    "ignore": ["**/.*","tests","bower_components","nbproject"],
+    "keywords": [
+        "color",
+        "jsyg",
+        "javascript",
+        "library"
+    ]
 }
