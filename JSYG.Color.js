@@ -619,7 +619,7 @@
     if (typeof JSYG != "undefined") JSYG.Color = Color;
 
     if (typeof module === "object" && typeof module.exports === "object") module.exports = Color;
-    else if (typeof define == 'function' && define.amd) define(function() { return Color; });
+    else if (typeof define == 'function' && define.amd) define("jsyg-color",function() { return Color; });
     else if (typeof JSYG == "undefined") this.Color = Color;
 
 }).call(this);

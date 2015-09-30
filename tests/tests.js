@@ -2,7 +2,7 @@ if (typeof require!= "undefined") {
     
     require.config({
         paths: {
-            "color": '../JSYG.Color'
+            "jsyg-color": '../JSYG.Color'
         },
         urlArgs: "bust=" + (+new Date())
     });
@@ -10,7 +10,7 @@ if (typeof require!= "undefined") {
 
 (function(factory) {
     
-    if (typeof define == 'function' && define.amd) define(["color"],factory);
+    if (typeof define == 'function' && define.amd) define(["jsyg-color"],factory);
     else factory(Color);
     
 }(function(Color) {
