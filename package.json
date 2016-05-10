@@ -1,6 +1,6 @@
 {
   "name": "jsyg-color",
-  "version": "0.6.7",
+  "version": "0.1.3",
   "description": "Colors constructor for JSYG framework or standalone",
   "main": "JSYG.Color.js",
   "directories": {
