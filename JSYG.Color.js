@@ -565,9 +565,8 @@
         v/=100;
 
         var l = (2-s)*v,
-        sl = s*v;
+        sl = s*v / (l <= 1 ? l : 2 - l) || 0;
 
-        sl /= (l <= 1) ? l : 2 - l;
         l /= 2;
 
         return {h:h,s:sl*100,l:l*100};
