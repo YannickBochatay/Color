@@ -4,6 +4,7 @@
     "description" : "Colors constructor for JSYG framework or standalone",
     "main": "JSYG.Color.js",
     "moduleType": [
+        "node",
         "amd",
         "globals"
     ],
