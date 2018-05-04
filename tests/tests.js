@@ -8,22 +8,28 @@ if (typeof require!= "undefined") {
     });
 }
 
+QUnit.config.autostart = false;
+
 (function(factory) {
     
-    if (typeof define == 'function' && define.amd) define(["jsyg-color"],factory);
+    if (typeof define == 'function' && define.amd) require(["jsyg-color"],factory);
     else factory(Color);
     
 }(function(Color) {
 
+    QUnit.start()
+
+    const { module, test } = QUnit
+
     module("color");
 
-    test("Manipulation d'une couleur", function() {     
+    test("Manipulation d'une couleur", assert => {     
         
         var color = new Color({r:0,g:0,b:255});
 
-        expect(1);
+        assert.expect(1);
         
-        equal( color.toHEX(), "0000ff" ,"hexa");
+        assert.equal( color.toHEX(), "0000ff" ,"hexa");
         
     });
     

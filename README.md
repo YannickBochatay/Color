@@ -2,24 +2,16 @@
 Constructeur de couleurs.
 
 ### Installation
-
-##### with npm
 ```shell
 npm install jsyg-color
 ```
-
-##### with bower
-```shell
-bower install jsyg-color
-```
-
 
 ### Usage
 
 ##### es6 modules (babel+webpack)
 ```javascript
 import Color from "jsyg-color"
-
+²
 var div = document.getElementById("#myElmt");
 var color = new Color("violet");
 div.style.color = color.complementary().lighten(2).toString();

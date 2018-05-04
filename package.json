@@ -1,6 +1,6 @@
 {
   "name": "jsyg-color",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "description": "Colors constructor for JSYG framework or standalone",
   "main": "JSYG.Color.js",
   "directories": {
@@ -25,6 +25,9 @@
     "url": "https://github.com/YannickBochatay/JSYG.Color/issues"
   },
   "homepage": "https://github.com/YannickBochatay/JSYG.Color#readme",
-  "devDependencies": {},
+  "devDependencies": {
+    "qunit": "^2.6.0",
+    "requirejs": "^2.3.5"
+  },
   "dependencies": {}
 }
